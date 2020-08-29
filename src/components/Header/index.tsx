@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Separator from '../Separator';
+
 import NextLogo from '../../assets/next.svg';
 import VercelLogo from '../../assets/vercel.svg';
 import Globe from '../../assets/globe.svg';
@@ -32,7 +34,7 @@ const Header: React.FC = () => {
           </Icons>
 
           <p>
-            <div className="separator" />
+            <Separator height={56} />
             An interactive online experience by the community, <br /> free for
             everyone.
           </p>

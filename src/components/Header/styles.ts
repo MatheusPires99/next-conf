@@ -42,13 +42,6 @@ export const MainContent = styled.div`
       display: flex;
       align-items: center;
     }
-
-    .separator {
-      width: 1px;
-      height: 56px;
-      margin: 0 16px;
-      background: ${({ theme }) => theme.colors.secundary};
-    }
   }
 `;
 
