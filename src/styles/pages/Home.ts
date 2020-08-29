@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Main = styled.main`
   flex: 1;
@@ -77,7 +78,7 @@ export const TitleSection = styled.section`
   }
 `;
 
-export const DateSection = styled.section`
+export const DateSection = styled(motion.section)`
   display: flex;
   align-items: center;
 
@@ -91,7 +92,7 @@ export const DateSection = styled.section`
   }
 `;
 
-export const FormSection = styled.section`
+export const FormSection = styled(motion.section)`
   width: 100%;
   margin-bottom: 24px;
 
@@ -125,7 +126,7 @@ export const FormSection = styled.section`
   }
 `;
 
-export const DoubtSection = styled.section`
+export const DoubtSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,7 +152,7 @@ export const DoubtSection = styled.section`
   }
 `;
 
-export const Footer = styled.footer`
+export const Footer = styled(motion.footer)`
   width: 100%;
   font-size: 14px;
   line-height: 1.5;

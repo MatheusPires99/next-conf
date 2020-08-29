@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'styled-components';
 
 import Separator from '../Separator';
 
@@ -11,10 +12,21 @@ import Graph from '../../assets/graph.svg';
 import { Container, Content, MainContent, Icons, RightContent } from './styles';
 
 const Header: React.FC = () => {
+  const { animation } = useTheme();
+
   return (
     <Container>
       <Content>
-        <MainContent>
+        <MainContent
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 0.4,
+            ease: animation.ease,
+          }}
+        >
           <NextLogo />
 
           <Icons>
@@ -40,7 +52,16 @@ const Header: React.FC = () => {
           </p>
         </MainContent>
 
-        <RightContent>
+        <RightContent
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 0.8,
+            ease: animation.ease,
+          }}
+        >
           <span>
             Hosted by <VercelLogo />
           </span>

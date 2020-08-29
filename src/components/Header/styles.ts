@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.header`
   width: 100%;
@@ -23,7 +24,7 @@ export const Content = styled.div`
   }
 `;
 
-export const MainContent = styled.div`
+export const MainContent = styled(motion.div)`
   display: flex;
   align-items: center;
 
@@ -86,7 +87,7 @@ export const Icons = styled.div`
   }
 `;
 
-export const RightContent = styled.aside`
+export const RightContent = styled(motion.aside)`
   display: none;
 
   @media (min-width: 768px) {
