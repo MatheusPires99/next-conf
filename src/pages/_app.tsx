@@ -5,11 +5,16 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
 
+import AppLayout from '../components/_layouts';
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Component {...pageProps} />
+
+      <AppLayout>
+        <Component {...pageProps} />
+      </AppLayout>
     </ThemeProvider>
   );
 };
