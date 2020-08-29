@@ -4,11 +4,11 @@ import Wrapper from '../components/Wrapper';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import Separator from '../components/Separator';
 
 import VercelLogo from '../assets/vercel.svg';
 
 import {
-  Container,
   Main,
   TitleSection,
   DateSection,
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     <Wrapper>
       <Header />
 
-      <Container>
+      <>
         <Main>
           <TitleSection>
             <p>
@@ -31,13 +31,17 @@ const Home: React.FC = () => {
               everyone.
             </p>
 
-            <h1>The first Next.js global user conference</h1>
+            <h1>
+              The first
+              <br className="line-break" /> Next.js{' '}
+              <br className="line-break" /> global user conference
+            </h1>
           </TitleSection>
 
           <DateSection>
             <p>OCTOBER 27, 2020</p>
 
-            <div className="separator" />
+            <Separator height={24} />
 
             <strong>ONLINE</strong>
           </DateSection>
@@ -68,11 +72,15 @@ const Home: React.FC = () => {
               <p>Copyright © 2020 Vercel, Inc. All rights reserved.</p>
             </div>
 
+            <Separator height={24} marginHorizontal={10} />
+
             <div className="footer-item">
-              <a href="https://www.notion.so/vercel/Next-js-Conf-Code-of-Conduct-2dae92927656409db28aaf2a62d99c41">
+              <a href="https://www.notion.so/vercel/Next-js-Conf-Code-of-Conduct-2dae92927624409db28aaf2a62d99c41">
                 Code of Conduct
               </a>
             </div>
+
+            <Separator height={24} marginHorizontal={10} />
 
             <div className="footer-item">
               <a href="https://vercel.com/legal/privacy-policy?utm_source=next-site&utm_medium=footer&utm_campaign=next-conf">
@@ -81,7 +89,7 @@ const Home: React.FC = () => {
             </div>
           </FooterContent>
         </Footer>
-      </Container>
+      </>
     </Wrapper>
   );
 };
