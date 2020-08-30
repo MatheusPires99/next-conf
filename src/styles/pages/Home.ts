@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const Main = styled.main`
+export const Container = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,6 @@ export const TitleSection = styled.section`
 
   h1 {
     font-size: 52px;
-    color: ${({ theme }) => theme.colors.primary};
     text-align: center;
     line-height: 1.15;
     letter-spacing: -0.05em;

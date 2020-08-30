@@ -6,6 +6,11 @@ export const Container = styled(motion.footer)`
   font-size: 14px;
   line-height: 1.5;
   margin: 0 auto;
+  padding-bottom: 60px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 30px;
+  }
 `;
 
 export const FooterContent = styled.div`

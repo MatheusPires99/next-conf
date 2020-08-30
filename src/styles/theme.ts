@@ -3,6 +3,7 @@ const theme = {
     background: '#000',
     primary: '#FFF',
     secundary: '#8A8F98',
+    inputBackground: '#252729',
   },
 
   animation: {

@@ -8,7 +8,7 @@ import Button from '../components/Button';
 import Separator from '../components/Separator';
 
 import {
-  Main,
+  Container,
   TitleSection,
   DateSection,
   FormSection,
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   );
 
   return (
-    <Main>
+    <Container>
       <TitleSection>
         <p>
           An interactive online experience by the community, free for everyone.
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
         Want to speak or sponsor?
         <a href="mailto:conf@nextjs.org">conf@nextjs.org</a>
       </DoubtSection>
-    </Main>
+    </Container>
   );
 };
 
