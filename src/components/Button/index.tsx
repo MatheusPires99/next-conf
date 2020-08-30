@@ -1,15 +1,18 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-import { Container } from './styles';
+const Container = styled(motion.button)`
+  height: 56px;
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.background};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.background};
+  }
+`;
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
-  return (
-    <Container type="button" {...rest}>
-      {children}
-    </Container>
-  );
-};
-
-export default Button;
+export default Container;
