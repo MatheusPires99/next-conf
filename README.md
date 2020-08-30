@@ -18,7 +18,7 @@ Nessa aplicação tive como objetivo iniciar meus estudos com o framework Next.j
 
 O Next possui diversar vantagens, como por exemplo, suporte para TypeScript, Fast Refresh, sistema de rotas nativo, dentre outras. Para começar meus estudos nessa tecnologia fiz um clone da interface de inscrição para a conferência do Next que ocorrerá dia 29 de outubro de 2020.
 
-Ainda nessa aplicação, resolvi aprender um pouco sobre novas bibliotecas de animações utilizando assim o Framer Motion.
+Ainda nessa aplicação, resolvi aprender um pouco sobre novas bibliotecas de animações utilizando assim o Framer Motion, e para todas as estilizações foi feitas seguindo os conceitos de mobile first.
 
 ## :hammer: Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
