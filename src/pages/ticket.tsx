@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import {
   FaGithub,
   FaCheckCircle,
   FaTwitter,
   FaArrowCircleDown,
+  FaLinkedin,
 } from 'react-icons/fa';
+import { useTheme } from 'styled-components';
 
 import Button from '../components/Button';
-
 import TicketVertical from '../assets/ticket-vertical.svg';
+import TicketHorizontal from '../assets/ticket-horizontal.svg';
 
 import {
   Container,
@@ -27,6 +30,7 @@ interface GithubUser {
 }
 
 const Ticket: React.FC = () => {
+  const { animation } = useTheme();
   const router = useRouter();
   const { username } = router.query;
 
@@ -46,27 +50,82 @@ const Ticket: React.FC = () => {
 
   return (
     <Container>
+      <div className="ticket-support">
+        <TicketHorizontal />
+      </div>
+
       <TicketData>
-        <h1>
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 0.4,
+            ease: animation.ease,
+          }}
+        >
           You're in.
           <br />
           Make it unique.
-        </h1>
+        </motion.h1>
 
-        <p>Generate a unique ticket image with your GitHub profile.</p>
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 0.8,
+            ease: animation.ease,
+          }}
+        >
+          Generate a unique ticket image with your GitHub profile.
+        </motion.p>
 
-        <div className="github-user-data">
+        <motion.div
+          className="github-user-data"
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 1.2,
+            ease: animation.ease,
+          }}
+        >
           <FaGithub />
           <span>{githubUser.login}</span>
           <FaCheckCircle className="check-icon" />
-        </div>
+        </motion.div>
 
-        <span>Only public info will be used.</span>
+        <motion.span
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 1.2,
+            ease: animation.ease,
+          }}
+        >
+          Only public info will be used.
+        </motion.span>
       </TicketData>
 
-      <UserTicket>
+      <UserTicket
+        initial="hidden"
+        animate="visible"
+        variants={animation.variants}
+        transition={{
+          duration: animation.duration,
+          delay: 1.6,
+          ease: animation.ease,
+        }}
+      >
         <div className="ticket-container">
           <TicketVertical />
+          <TicketHorizontal />
 
           <GithubUserData>
             <img src={githubUser.avatar_url} alt={githubUser.name} />
@@ -82,12 +141,44 @@ const Ticket: React.FC = () => {
           </GithubUserData>
 
           <SocialMedia>
-            <Button>
+            <Button
+              initial="hidden"
+              animate="visible"
+              variants={animation.variants}
+              transition={{
+                duration: animation.duration,
+                delay: 2,
+                ease: animation.ease,
+              }}
+            >
               <FaTwitter />
               Tweet it!
             </Button>
 
-            <Button>
+            <Button
+              initial="hidden"
+              animate="visible"
+              variants={animation.variants}
+              transition={{
+                duration: animation.duration,
+                delay: 2.2,
+                ease: animation.ease,
+              }}
+            >
+              <FaLinkedin />
+              LinkedIn
+            </Button>
+
+            <Button
+              initial="hidden"
+              animate="visible"
+              variants={animation.variants}
+              transition={{
+                duration: animation.duration,
+                delay: 2.4,
+                ease: animation.ease,
+              }}
+            >
               <FaArrowCircleDown />
               Download
             </Button>

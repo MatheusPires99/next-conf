@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.main`
   flex: 1;
@@ -7,8 +8,23 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
 
+  margin-top: 80px;
+
   @media (min-width: 1200px) {
     flex-direction: row;
+    width: 1130px;
+    margin-top: 0px;
+    margin: 0 auto;
+  }
+
+  .ticket-support {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      position: absolute;
+      opacity: 0;
+    }
   }
 `;
 
@@ -97,17 +113,44 @@ export const TicketData = styled.div`
   }
 `;
 
-export const UserTicket = styled.div`
+export const UserTicket = styled(motion.div)`
   flex: 1;
-  width: 330px;
-  height: 560px;
+
   margin-bottom: 60px;
+
+  @media (min-width: 1200px) {
+    margin-bottom: 0px;
+  }
 
   .ticket-container {
     position: relative;
 
     display: flex;
     flex-direction: column;
+    align-self: center;
+
+    > svg:nth-child(1) {
+      display: block;
+      align-self: center;
+      width: 330px;
+      height: 560px;
+    }
+
+    > svg:nth-child(2) {
+      display: none;
+      width: 650px;
+      height: 330px;
+    }
+
+    @media (min-width: 768px) {
+      > svg:nth-child(1) {
+        display: none;
+      }
+
+      > svg:nth-child(2) {
+        display: block;
+      }
+    }
   }
 `;
 
@@ -117,12 +160,17 @@ export const GithubUserData = styled.div`
 
   position: absolute;
   top: 46px;
-  left: 29px;
+  left: 65px;
 
   img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+
+    @media (min-width: 768px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   div {
@@ -131,9 +179,17 @@ export const GithubUserData = styled.div`
     display: flex;
     flex-direction: column;
 
+    @media (min-width: 768px) {
+      margin-left: 16px;
+    }
+
     h3 {
       font-size: 24px;
       line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 32px;
+      }
     }
 
     p {
@@ -160,11 +216,33 @@ export const SocialMedia = styled.div`
   flex-direction: column;
   align-self: center;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+  }
+
   button {
     position: relative;
 
+    &:nth-child(2) {
+      display: none;
+    }
+
     & + button {
       margin-top: 16px;
+    }
+
+    @media (min-width: 768px) {
+      width: 100%;
+
+      &:nth-child(2) {
+        display: block;
+      }
+
+      & + button {
+        margin-top: 0px;
+        margin-left: 16px;
+      }
     }
 
     svg {
@@ -172,7 +250,7 @@ export const SocialMedia = styled.div`
       height: 24px;
       position: absolute;
       left: 16px;
-      top: 18px;
+      top: 16px;
     }
   }
 `;

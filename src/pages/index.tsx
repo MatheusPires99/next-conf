@@ -36,9 +36,18 @@ const Home: React.FC = () => {
   return (
     <Container>
       <TitleSection>
-        <p>
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={animation.variants}
+          transition={{
+            duration: animation.duration,
+            delay: 1.2,
+            ease: animation.ease,
+          }}
+        >
           An interactive online experience by the community, free for everyone.
-        </p>
+        </motion.p>
 
         <motion.h1
           initial="hidden"
@@ -85,7 +94,7 @@ const Home: React.FC = () => {
       >
         <form onSubmit={handleGoToTicket}>
           <Input
-            placeholder="Enter name to register free"
+            placeholder="Enter your Github user name"
             required
             onChange={e => setUsername(e.target.value)}
           />
